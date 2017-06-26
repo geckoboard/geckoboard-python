@@ -9,6 +9,6 @@ class Client():
     self.datasets = DatasetsClient(connection)
 
   def ping(self):
-    request = self.__connection.get('/')
+    self.__connection.get('/')
 
     return True
