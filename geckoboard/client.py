@@ -11,7 +11,4 @@ class Client():
   def ping(self):
     request = self.__connection.get('/')
 
-    if request.status_code < 200 or request.status_code >= 300:
-      request.raise_for_status()
-
     return True
