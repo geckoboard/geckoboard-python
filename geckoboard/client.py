@@ -4,7 +4,7 @@ from datasets_client import DatasetsClient
 class Client():
   def __init__(self, api_key):
     connection = Connection(api_key)
-
+    
     self.__connection = connection
     self.datasets = DatasetsClient(connection)
 

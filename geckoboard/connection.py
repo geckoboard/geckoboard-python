@@ -1,5 +1,6 @@
 import api
 import json
+import response_handler
 
 class Connection():
   def __init__(self, api_key):
@@ -23,8 +24,6 @@ class Connection():
 
   def handle_response(self, response):
     if response.status_code < 200 or response.status_code >= 300:
-      error_message = response.json()['error']['message']
-
-      raise Exception(error_message)
+      raise Exception(response_handler.get_error_message(response))
 
     return response
