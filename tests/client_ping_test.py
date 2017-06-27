@@ -1,5 +1,5 @@
 from mock import Mock, patch
-from nose.tools import assert_equal, assert_raises
+from nose.tools import assert_equal
 import geckoboard
 
 API_KEY = 'ABC'
