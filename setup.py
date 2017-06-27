@@ -11,4 +11,5 @@ setup(
   keywords='geckoboard datasets',
   packages=['geckoboard'],
   install_requires=['requests'],
+  tests_require=['nose', 'mock'],
 )
