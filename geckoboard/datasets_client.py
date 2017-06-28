@@ -1,4 +1,4 @@
-from dataset import Dataset
+from geckoboard.dataset import Dataset
 
 class DatasetsClient():
   def __init__(self, connection):

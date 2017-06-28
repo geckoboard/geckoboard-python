@@ -1,6 +1,6 @@
-import api
 import json
-import response_handler
+from geckoboard import api
+from geckoboard import response_handler
 
 class Connection():
   def __init__(self, api_key):

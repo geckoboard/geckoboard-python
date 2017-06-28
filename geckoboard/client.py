@@ -1,5 +1,5 @@
-from connection import Connection
-from datasets_client import DatasetsClient
+from geckoboard.connection import Connection
+from geckoboard.datasets_client import DatasetsClient
 
 class Client():
   def __init__(self, api_key):
