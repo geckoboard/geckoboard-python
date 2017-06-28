@@ -3,3 +3,4 @@
 
 # Distributaion / Packaging
 *.egg-info
+dist
