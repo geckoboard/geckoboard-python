@@ -2,14 +2,19 @@ from setuptools import setup
 
 setup(
   name='geckoboard',
-  version='1.0.0',
-  description='A Python client for the Geckokboard Datasets API',
+  version='0.1.0',
+  description='The official Python client for the Geckoboard Datasets API',
   url='https://github.com/geckoboard/geckoboard-python',
-  author='Dan Bahrami',
+  author='Geckoboard',
   author_email='dan@geckoboard.com',
   license='MIT',
-  keywords='geckoboard datasets',
+  keywords=['geckoboard', 'datasets', 'api', 'python'],
   packages=['geckoboard'],
   install_requires=['requests'],
   tests_require=['nose', 'mock'],
+  classifiers=[
+    'Development Status :: 4 - Beta',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License'
+  ]
 )
