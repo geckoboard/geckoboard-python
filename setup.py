@@ -6,7 +6,7 @@ def readme():
 
 setup(
   name='geckoboard',
-  version='0.2.2',
+  version='0.2.4',
   description='The official Python client for the Geckoboard Datasets API',
   long_description=readme(),
   url='https://github.com/geckoboard/geckoboard-python',
