@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
   name='geckoboard',
-  version='0.2.0',
+  version='0.2.1',
   description='The official Python client for the Geckoboard Datasets API',
   url='https://github.com/geckoboard/geckoboard-python',
   author='Geckoboard',
