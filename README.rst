@@ -78,52 +78,11 @@ more field names whose values will be unique across all your records.
 Params:
 ~~~~~~~
 
--  ``dataset_id`` [required]
-   <`str <https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange>`__>
--  ``fields`` [required]
-   <`dict <https://docs.python.org/2/library/stdtypes.html#mapping-types-dict>`__>
-
-   .. raw:: html
-
-      <ul>
-
-   .. raw:: html
-
-      <li>
-
-   ``type`` [required]
-   <`str <https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange>`__>
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   ``name`` [required]
-   <`str <https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange>`__>
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      <li>
-
-   ``optional``
-   <`boolean <https://docs.python.org/2/library/stdtypes.html#boolean-values>`__>
-
-   .. raw:: html
-
-      </li>
-
-   .. raw:: html
-
-      </ul>
-
+-  ``dataset_id`` [required] <`str <https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange>`__>
+-  ``fields`` [required] <`dict <https://docs.python.org/2/library/stdtypes.html#mapping-types-dict>`__>
+    - ``type`` [required] <`str <https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange>`__>
+    - ``name`` [required] <`str <https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange>`__>
+    - ``optional`` <`boolean <https://docs.python.org/2/library/stdtypes.html#boolean-values>`__>
 -  ``unique_by``
    <`list <https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange>`__>
 
