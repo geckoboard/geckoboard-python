@@ -1,9 +1,14 @@
 from setuptools import setup
 
+def readme():
+    with open('README.rst') as f:
+        return f.read()
+
 setup(
   name='geckoboard',
   version='0.2.1',
   description='The official Python client for the Geckoboard Datasets API',
+  long_description=readme(),
   url='https://github.com/geckoboard/geckoboard-python',
   author='Geckoboard',
   author_email='dan@geckoboard.com',
