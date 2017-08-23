@@ -14,7 +14,7 @@ Install the package with pip
 
 ::
 
-    pip install geckoboard
+    pip install geckoboard.py
 
 Usage
 -----
@@ -32,7 +32,7 @@ Install the python client from PIP
 
 ::
 
-    pip install geckoboard
+    pip install geckoboard.py
 
 Import the Geckoboard package and create an instance of the client using
 your API key:

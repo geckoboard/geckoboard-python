@@ -9,7 +9,7 @@ A Python client library for [Geckoboard datasets API](https://developer.geckoboa
 Install the package with pip
 
 ```
-pip install geckoboard
+pip install geckoboard.py
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ The latest documentation and user guide can be found on the [Geckoboard develope
 Install the python client from PIP
 
 ```
-pip install geckoboard
+pip install geckoboard.py
 ```
 
 Import the Geckoboard package and create an instance of the client using your API key:
