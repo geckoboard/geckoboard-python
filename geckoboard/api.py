@@ -1,3 +1,7 @@
+"""
+Private: api access methods
+"""
+
 import requests
 
 API_HOST = 'https://api.geckoboard.com'

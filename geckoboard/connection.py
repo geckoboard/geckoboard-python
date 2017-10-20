@@ -1,3 +1,10 @@
+"""
+Private class: Connection
+
+A utility wrapper for containing API details and exposing
+simplified API access methods.
+"""
+
 from geckoboard import api
 from geckoboard import response_handler
 
