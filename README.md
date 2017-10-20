@@ -31,7 +31,7 @@ Import the Geckoboard package and create an instance of the client using your AP
 ```python
 import geckoboard
 
-client = geckbooard.client(API_KEY)
+client = geckoboard.client(API_KEY)
 ```
 
 **Note:** You can find your API key by logging into the Geckoboard application and visiting the Account section.
