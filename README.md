@@ -1,8 +1,6 @@
 # geckoboard-python
 
-A Python client library for [Geckoboard datasets API](https://developer.geckoboard.com/api-reference/).
-
-*Note: This library is still in Beta and the API has potential to change before the release of V1.*
+A Python client library for [Geckoboard datasets API](https://api-docs.geckoboard.com/).
 
 ## Installation
 
@@ -14,7 +12,7 @@ pip install geckoboard.py
 
 ## Usage
 
-The latest documentation and user guide can be found on the [Geckoboard developer docs](https://developer.geckoboard.com/api-reference/python/)
+The latest documentation and user guide can be found on the [Geckoboard developer docs](https://developer.geckoboard.com/hc/en-us/articles/360018322692)
 
 ---
 
