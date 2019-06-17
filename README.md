@@ -60,11 +60,9 @@ client.datasets.find_or_create(dataset_id, fields, unique_by)
 ### Params:
 - `dataset_id` [required] <[str][str-type]>
 - `fields` [required] <[dict][dict-type]>
-<ul>
-<li>`type` [required] <[str][str-type]></li>
-<li>`name` [required] <[str][str-type]></li>
-<li>`optional` <[boolean][boolean-type]></li>
-</ul>
+   - `type` [required] <[str][str-type]></li>
+   - `name` [required] <[str][str-type]></li>
+   - `optional` <[boolean][boolean-type]></li>
 - `unique_by` <[list][list-type]>
 
 ### Example:
