@@ -12,6 +12,7 @@ FIELDS = {
     'amount': {'foo': 'bar'},
     'timestamp': {'foo': 'bar'},
 }
+TIMEOUT = 50
 
 
 @patch('geckoboard.api.put')
@@ -19,7 +20,7 @@ FIELDS = {
 def test_makes_api_call(mock_api_post, mock_api_put):
     mock_api_put.return_value = Mock(status_code=200)
     mock_api_post.return_value = Mock(status_code=200)
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
     dataset = client.datasets.find_or_create(DATASET_ID, FIELDS)
 
     dataset.post(ITEMS)
@@ -27,7 +28,8 @@ def test_makes_api_call(mock_api_post, mock_api_put):
     mock_api_post.assert_called_with(
         '/datasets/' + DATASET_ID + '/data',
         {'data': ITEMS},
-        API_KEY
+        API_KEY,
+        TIMEOUT
     )
 
 
@@ -36,7 +38,7 @@ def test_makes_api_call(mock_api_post, mock_api_put):
 def test_handles_delete_by(mock_api_post, mock_api_put):
     mock_api_put.return_value = Mock(status_code=200)
     mock_api_post.return_value = Mock(status_code=200)
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
     dataset = client.datasets.find_or_create(DATASET_ID, FIELDS)
 
     dataset.post(ITEMS, DELETE_BY)
@@ -44,7 +46,8 @@ def test_handles_delete_by(mock_api_post, mock_api_put):
     mock_api_post.assert_called_with(
         '/datasets/' + DATASET_ID + '/data',
         {'data': ITEMS, 'delete_by': DELETE_BY},
-        API_KEY
+        API_KEY,
+        TIMEOUT
     )
 
 

@@ -8,43 +8,46 @@ ERROR_MESSAGE = 'Whoops!'
 DATASET_ID = 'Sales.by_day'
 UNIQUE_BY = 'timestamp'
 FIELDS = {
-    'amount': {'foo': 'bar'},
+    'amount':    {'foo': 'bar'},
     'timestamp': {'foo': 'bar'},
 }
+TIMEOUT = 50
 
 
 @patch('geckoboard.api.put')
 def test_makes_api_call(mock_api_put):
     mock_api_put.return_value = Mock(status_code=200)
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
 
     client.datasets.find_or_create(DATASET_ID, FIELDS)
 
     mock_api_put.assert_called_with(
         '/datasets/' + DATASET_ID,
         {'fields': FIELDS},
-        API_KEY
+        API_KEY,
+        TIMEOUT
     )
 
 
 @patch('geckoboard.api.put')
 def test_handles_unique_by(mock_api_put):
     mock_api_put.return_value = Mock(status_code=200)
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
 
     client.datasets.find_or_create(DATASET_ID, FIELDS, UNIQUE_BY)
 
     mock_api_put.assert_called_with(
         '/datasets/' + DATASET_ID,
         {'fields': FIELDS, 'unique_by': UNIQUE_BY},
-        API_KEY
+        API_KEY,
+        TIMEOUT
     )
 
 
 @patch('geckoboard.api.put')
 def test_returns_dataset(mock_api_put):
     mock_api_put.return_value = Mock(status_code=200)
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
 
     dataset = client.datasets.find_or_create(DATASET_ID, FIELDS)
 
@@ -57,7 +60,7 @@ def test_rethrows_api_error(mock_get_error_message, mock_api_put):
     mock_response = Mock(status_code=401)
     mock_api_put.return_value = mock_response
     mock_get_error_message.return_value = ERROR_MESSAGE
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
 
     try:
         client.datasets.find_or_create(DATASET_ID, FIELDS)

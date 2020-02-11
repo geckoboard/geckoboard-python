@@ -5,7 +5,7 @@ Public class: DatasetsClient
 from geckoboard.dataset import Dataset
 
 
-class DatasetsClient():
+class DatasetsClient:
     """
     The datasets API client
 

@@ -153,6 +153,16 @@ dataset.delete() # => true
 
 ---
 
+## Timeout
+To enable timeouts for requests package
+```python
+import geckoboard
+
+client = geckoboard.client(API_KEY, timeout=60)
+# or as positional parameter
+client = geckoboard.client(API_KEY, 60)
+```
+
 ## Development
 
 Clone this repo

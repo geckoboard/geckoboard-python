@@ -9,7 +9,7 @@ you can create, update and delete datasets.
 from geckoboard.client import Client
 
 
-def client(api_key):
+def client(api_key, timeout=None):
     """
     Creates an instance of a Geckoboard API client
 
@@ -25,10 +25,12 @@ def client(api_key):
     ----------
     api_key : str
         Your Geckoboard API key
+    timeout : float
+        Optional timeout parameter
 
     Returns
     -------
     Client
         A Geckoboard API client instance
     """
-    return Client(api_key)
+    return Client(api_key, timeout)
