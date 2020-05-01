@@ -7,12 +7,13 @@ ERROR_MESSAGE = 'Whoops!'
 DATASET_ID = 'Sales.by_day'
 FIELDS = {}
 ITEMS = [{'amount': 123}]
+TIMEOUT = 50
 
 
 @patch('geckoboard.api.put')
 def test_makes_api_call(mock_api_put):
     mock_api_put.return_value = Mock(status_code=200)
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
     dataset = client.datasets.find_or_create(DATASET_ID, FIELDS)
 
     dataset.put(ITEMS)
@@ -20,7 +21,8 @@ def test_makes_api_call(mock_api_put):
     mock_api_put.assert_called_with(
         '/datasets/' + DATASET_ID + '/data',
         {'data': ITEMS},
-        API_KEY
+        API_KEY,
+        TIMEOUT
     )
 
 

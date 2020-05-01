@@ -3,7 +3,7 @@ Public class: Dataset
 """
 
 
-class Dataset():
+class Dataset:
     """
     Update or delete an individual dataset.
 

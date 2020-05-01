@@ -6,7 +6,7 @@ from geckoboard.connection import Connection
 from geckoboard.datasets_client import DatasetsClient
 
 
-class Client():
+class Client:
     """
     The Geckoboard API client
 
@@ -29,8 +29,8 @@ class Client():
         The datasets client can find, create and delete your datasets
     """
 
-    def __init__(self, api_key):
-        connection = Connection(api_key)
+    def __init__(self, api_key, timeout=None):
+        connection = Connection(api_key, timeout=timeout)
 
         self.__connection = connection
         self.datasets = DatasetsClient(connection)

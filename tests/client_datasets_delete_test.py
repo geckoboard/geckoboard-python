@@ -5,22 +5,23 @@ import geckoboard
 API_KEY = 'ABC'
 ERROR_MESSAGE = 'Whoops!'
 DATASET_ID = 'Sales.by_day'
+TIMEOUT = 50
 
 
 @patch('geckoboard.api.delete')
 def test_makes_api_call(mock_api_delete):
     mock_api_delete.return_value = Mock(status_code=200)
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=0)
 
     client.datasets.delete(DATASET_ID)
 
-    mock_api_delete.assert_called_with('/datasets/' + DATASET_ID, API_KEY)
+    mock_api_delete.assert_called_with('/datasets/' + DATASET_ID, API_KEY, 0)
 
 
 @patch('geckoboard.api.delete')
 def test_returns_true_on_success(mock_api_delete):
     mock_api_delete.return_value = Mock(status_code=200)
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
 
     response = client.datasets.delete(DATASET_ID)
 
@@ -33,7 +34,7 @@ def test_rethrows_api_error(mock_get_error_message, mock_api_delete):
     mock_response = Mock(status_code=401)
     mock_api_delete.return_value = mock_response
     mock_get_error_message.return_value = ERROR_MESSAGE
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
 
     try:
         client.datasets.delete(DATASET_ID)

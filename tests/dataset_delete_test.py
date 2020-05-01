@@ -6,6 +6,7 @@ API_KEY = 'ABC'
 ERROR_MESSAGE = 'Whoops!'
 DATASET_ID = 'Sales.by_day'
 FIELDS = {}
+TIMEOUT = 50
 
 
 @patch('geckoboard.api.put')
@@ -13,12 +14,12 @@ FIELDS = {}
 def test_makes_api_call(mock_api_delete, mock_api_put):
     mock_api_put.return_value = Mock(status_code=200)
     mock_api_delete.return_value = Mock(status_code=200)
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
     dataset = client.datasets.find_or_create(DATASET_ID, FIELDS)
 
     dataset.delete()
 
-    mock_api_delete.assert_called_with('/datasets/' + DATASET_ID, API_KEY)
+    mock_api_delete.assert_called_with('/datasets/' + DATASET_ID, API_KEY, TIMEOUT)
 
 
 @patch('geckoboard.api.put')

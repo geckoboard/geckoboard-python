@@ -4,16 +4,17 @@ import geckoboard
 
 API_KEY = 'ABC'
 ERROR_MESSAGE = 'Whoops!'
+TIMEOUT = 50
 
 
 @patch('geckoboard.api.get')
 def test_makes_api_call(mock_api_get):
     mock_api_get.return_value = Mock(status_code=200)
-    client = geckoboard.client(API_KEY)
+    client = geckoboard.client(API_KEY, timeout=TIMEOUT)
 
     client.ping()
 
-    mock_api_get.assert_called_with('/', API_KEY)
+    mock_api_get.assert_called_with('/', API_KEY, TIMEOUT)
 
 
 @patch('geckoboard.api.get')
